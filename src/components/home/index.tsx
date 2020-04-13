@@ -1,19 +1,29 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub, faTwitter, faCodepen } from '@fortawesome/free-brands-svg-icons';
 
-export interface PropType {
+export interface IProps {
   message: string;
 }
 
-export const Home = (props: PropType) => {
+export const Home = (props: IProps) => {
   return (
     <Container>
       <IconContainer>
-        <FontAwesomeIcon icon={faHome} size="2x" />
+        <Link href="">
+          <FontAwesomeIcon icon={faLinkedin} size="lg" />
+        </Link>
+        <Link href="">
+          <FontAwesomeIcon icon={faGithub} size="lg" />
+        </Link>
+        <Link href="">
+          <FontAwesomeIcon icon={faTwitter} size="lg" />
+        </Link>
+        <Link href="">
+          <FontAwesomeIcon icon={faCodepen} size="lg" />
+        </Link>
       </IconContainer>
-      Home
     </Container>
   );
 };
@@ -29,4 +39,12 @@ const Container = styled.div`
 
 const IconContainer = styled.div`
   margin: 25px 0;
+`;
+
+const Link = styled.a`
+  margin: 5px;
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
 `;
