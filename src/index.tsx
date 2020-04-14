@@ -18,7 +18,7 @@ declare module 'styled-components' {
 
 const primary = {
   fontFamily: 'Helvetica Neue',
-  backgroundColor: '#000',
+  backgroundColor: '#1b1b1b',
   letterSpacing: '0.75px',
   fontSize: '20px',
   color: '#fff'
