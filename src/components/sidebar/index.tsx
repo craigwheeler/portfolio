@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faAtom, faEnvelope, faCog } from '@fortawesome/free-solid-svg-icons';
-import { Link, Switch, Route, BrowserRouter, Router } from 'react-router-dom';
+import { faHome, faCog } from '@fortawesome/free-solid-svg-icons';
+import { Link, Switch, Route, Router } from 'react-router-dom';
 import { Home } from '../home';
 import { Settings } from '../settings';
 import { createBrowserHistory } from 'history';
@@ -50,8 +50,8 @@ export const Sidebar = (): JSX.Element => {
   return (
     <Router history={history}>
       <SidebarContainer>
-        <Burger open={open} setOpen={open => setOpen(open)} />
-        <Menu open={open} setOpen={open => setOpen(open)} />
+        {/* <Burger open={open} setOpen={open => setOpen(open)} />
+        <Menu open={open} setOpen={open => setOpen(open)} /> */}
       </SidebarContainer>
       <Switch>
         <Route exact path="/" component={Home} />
@@ -112,7 +112,7 @@ const StyledMenu = styled.nav<{ open?: boolean }>`
   background: #fff;
   transform: ${props => (props.open ? 'translateX(0)' : 'translateX(-100%)')};
   height: 100vh;
-  width: 300px;
+  width: 275px;
   text-align: left;
   position: absolute;
   top: 0;
@@ -121,25 +121,28 @@ const StyledMenu = styled.nav<{ open?: boolean }>`
   @media (max-width: 576px) {
     width: 75%;
   }
-  li {
-    padding: 20px 30px;
-    list-style: none;
-    a {
-      font-size: 16px;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: #222;
-      text-decoration: none;
-      transition: color 0.3s linear;
-      &:hover {
-        color: #343078;
+  ul {
+    height: 60%;
+    li {
+      padding: 20px 30px;
+      list-style: none;
+      a {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #222;
+        text-decoration: none;
+        transition: color 0.3s linear;
+        &:hover {
+          color: #343078;
+        }
       }
-    }
-    @media (max-width: 576px) {
-      font-size: 14px;
-    }
-    svg {
-      margin-right: 15px;
+      @media (max-width: 576px) {
+        font-size: 14px;
+      }
+      svg {
+        margin-right: 15px;
+      }
     }
   }
 `;
