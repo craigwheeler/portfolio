@@ -1,5 +1,5 @@
 const version = 'v1/';
-const assetsToCache = ['/', '/index.html', '/manifest.json'];
+const assetsToCache = ['/', '/index.html', '/manifest.json', '/favicon.ico'];
 
 self.addEventListener('install', event => {
   self.skipWaiting();
