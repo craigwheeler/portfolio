@@ -3,20 +3,36 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCog } from '@fortawesome/free-solid-svg-icons';
 import { Link, Switch, Route, Router } from 'react-router-dom';
-import { Home } from '../home';
-import { Settings } from '../settings';
 import { createBrowserHistory } from 'history';
+import { connect, useDispatch } from 'react-redux';
+import { toggleSidebar } from '../../actions';
 
-interface Props {
+import HomePage from '../home';
+import ContactPage from '../contact';
+
+interface IProps {
   open: boolean;
-  setOpen?: (open: boolean) => void;
 }
 
 const history = createBrowserHistory();
 
-const Burger = (props: Props): JSX.Element => {
+const App = ({ open }: IProps): JSX.Element => (
+  <Router history={history}>
+    <SidebarContainer>
+      <Burger open={open} />
+      <Menu open={open} />
+    </SidebarContainer>
+    <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/contact" component={ContactPage} />
+    </Switch>
+  </Router>
+);
+
+const Burger = ({ open }: any): JSX.Element => {
+  const dispatch = useDispatch();
   return (
-    <StyledBurger open={props.open} onClick={() => props.setOpen(!props.open)}>
+    <StyledBurger open={open} onClick={() => dispatch(toggleSidebar(open))}>
       <Line />
       <Line />
       <Line />
@@ -24,20 +40,21 @@ const Burger = (props: Props): JSX.Element => {
   );
 };
 
-const Menu = (props: Props): JSX.Element => {
+const Menu = ({ open }: any): JSX.Element => {
+  const dispatch = useDispatch();
   return (
-    <StyledMenu open={props.open}>
+    <StyledMenu open={open}>
       <ul>
         <li>
-          <Link to="/" onClick={() => props.setOpen(false)}>
+          <Link to="/" onClick={() => dispatch(toggleSidebar(open))}>
             <FontAwesomeIcon icon={faHome} />
             Home
           </Link>
         </li>
         <li>
-          <Link to="/settings" onClick={() => props.setOpen(false)}>
+          <Link to="/contact" onClick={() => dispatch(toggleSidebar(open))}>
             <FontAwesomeIcon icon={faCog} />
-            Settings
+            Contact
           </Link>
         </li>
       </ul>
@@ -45,21 +62,10 @@ const Menu = (props: Props): JSX.Element => {
   );
 };
 
-export const Sidebar = (): JSX.Element => {
-  const [open, setOpen] = React.useState<boolean>(false);
-  return (
-    <Router history={history}>
-      <SidebarContainer>
-        {/* <Burger open={open} setOpen={open => setOpen(open)} />
-        <Menu open={open} setOpen={open => setOpen(open)} /> */}
-      </SidebarContainer>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/settings" component={Settings} />
-      </Switch>
-    </Router>
-  );
-};
+const mapStateToProps = (state: any) => ({
+  open: state.sidebar.open
+});
+export default connect(mapStateToProps)(App);
 
 const Line = styled.div``;
 
@@ -127,7 +133,7 @@ const StyledMenu = styled.nav<{ open?: boolean }>`
       padding: 20px 30px;
       list-style: none;
       a {
-        font-size: 16px;
+        font-size: 20px;
         text-transform: uppercase;
         font-weight: bold;
         color: #222;
@@ -141,7 +147,7 @@ const StyledMenu = styled.nav<{ open?: boolean }>`
         font-size: 14px;
       }
       svg {
-        margin-right: 15px;
+        margin-right: 10px;
       }
     }
   }

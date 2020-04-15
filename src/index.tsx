@@ -2,7 +2,10 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { Sidebar } from './components/sidebar';
+import { Provider } from 'react-redux';
+import store from './store';
+
+import App from './components/app';
 
 OfflinePluginRuntime.install();
 
@@ -17,9 +20,9 @@ declare module 'styled-components' {
 }
 
 const primary = {
-  fontFamily: 'Helvetica Neue',
+  fontFamily: 'monospace',
   backgroundColor: '#1b1b1b',
-  letterSpacing: '0.75px',
+  letterSpacing: '0.50px',
   fontSize: '20px',
   color: '#fff'
 };
@@ -39,10 +42,12 @@ const GlobalStyle = createGlobalStyle`
 
 const Index = () => {
   return (
-    <ThemeProvider theme={primary}>
-      <GlobalStyle />
-      <Sidebar />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={primary}>
+        <GlobalStyle />
+        <App />
+      </ThemeProvider>
+    </Provider>
   );
 };
 

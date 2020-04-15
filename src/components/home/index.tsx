@@ -3,37 +3,33 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faTwitter, faCodepen } from '@fortawesome/free-brands-svg-icons';
 
-export interface IProps {
-  message: string;
-}
+const HomePage = (): JSX.Element => (
+  <Container>
+    <Title>Craig Wheeler</Title>
+    <SubTitle>Front-end Engineer</SubTitle>
+    <Caption>
+      Hello <span>👋</span> I'm a Front-end Engineer from Tampa, FL with experience building web applications using
+      modern web tools. I specialize in JavaScript and have professional experience working with TypeScript, React,
+      Redux and GraphQL. Take a look at my work or get in touch!
+    </Caption>
+    <IconContainer>
+      <Link href="https://www.linkedin.com/in/craigawheeler/" target="_blank">
+        <FontAwesomeIcon icon={faLinkedin} size="lg" />
+      </Link>
+      <Link href="https://github.com/craigwheeler" target="_blank">
+        <FontAwesomeIcon icon={faGithub} size="lg" />
+      </Link>
+      <Link href="https://codepen.io/craigwheeler" target="_blank">
+        <FontAwesomeIcon icon={faCodepen} size="lg" />
+      </Link>
+      <Link href="https://twitter.com/iamnumber2407" target="_blank">
+        <FontAwesomeIcon icon={faTwitter} size="lg" />
+      </Link>
+    </IconContainer>
+  </Container>
+);
 
-export const Home = (props: IProps) => {
-  return (
-    <Container>
-      <Title>Craig Wheeler</Title>
-      <SubTitle>Front-end Engineer</SubTitle>
-      <Caption>
-        Hello <span>👋</span> I'm a Front-end Engineer from Tampa, FL with experience building web applications using
-        modern web tools. I specialize in JavaScript and have professional experience working with TypeScript, React,
-        Redux and GraphQL. Take a look at my work or get in touch!
-      </Caption>
-      <IconContainer>
-        <Link href="https://www.linkedin.com/in/craigawheeler/" target="_blank">
-          <FontAwesomeIcon icon={faLinkedin} size="lg" />
-        </Link>
-        <Link href="https://github.com/craigwheeler" target="_blank">
-          <FontAwesomeIcon icon={faGithub} size="lg" />
-        </Link>
-        <Link href="https://codepen.io/craigwheeler" target="_blank">
-          <FontAwesomeIcon icon={faCodepen} size="lg" />
-        </Link>
-        <Link href="https://twitter.com/iamnumber2407" target="_blank">
-          <FontAwesomeIcon icon={faTwitter} size="lg" />
-        </Link>
-      </IconContainer>
-    </Container>
-  );
-};
+export default HomePage;
 
 const Container = styled.div`
   display: flex;

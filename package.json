@@ -7,7 +7,8 @@
     "test": "jest",
     "clean": "rm -rf public/",
     "dev": "webpack-dev-server --open --config webpack.dev.ts",
-    "build": "webpack --mode production --config webpack.prod.ts"
+    "build": "webpack --mode production --config webpack.prod.ts",
+    "start": "yarn dev"
   },
   "keywords": [],
   "author": "Craig Wheeler",
@@ -18,11 +19,16 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "@types/node": "^12.12.35",
+    "@types/react-redux": "^7.1.7",
     "@types/react-router-dom": "^5.1.4",
+    "@types/redux-promise": "^0.5.28",
     "@types/styled-components": "^4.4.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
+    "redux-promise": "^0.6.0",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
