@@ -13,15 +13,9 @@ export const Home = (props: IProps) => {
       <Title>Craig Wheeler</Title>
       <SubTitle>Front-end Engineer</SubTitle>
       <Caption>
-<<<<<<< HEAD
         Hello <span>👋</span> I'm a Front-end Engineer from Tampa, FL with experience building web applications using
         modern web tools. I specialize in JavaScript and have professional experience working with TypeScript, React,
         Redux and GraphQL. Take a look at my work or get in touch!
-=======
-        I'm a Front-end Engineer from Tampa, FL with experience building web applications using modern web tools. I
-        specialize in JavaScript and have professional experience working with TypeScript, React, Redux and GraphQL.
-        Take a look at my work or get in touch!
->>>>>>> 66dd07fd47864ce271ee38769163ce5fbcc004b7
       </Caption>
       <IconContainer>
         <Link href="https://www.linkedin.com/in/craigawheeler/" target="_blank">
@@ -70,12 +64,9 @@ const Caption = styled.div`
   line-height: 1.5;
   font-weight: 200;
   width: 50%;
-<<<<<<< HEAD
   span {
     font-size: 20px;
   }
-=======
->>>>>>> 66dd07fd47864ce271ee38769163ce5fbcc004b7
 `;
 
 const IconContainer = styled.div`
