@@ -2,15 +2,15 @@ import * as React from 'react';
 
 const ContactForm = () => {
   return (
-    <form name="contact" action="POST" data-netlify="true">
+    <form name="portfolio-contact" method="POST" data-netlify="true">
       <p>
         <label>
-          Your Name: <input type="text" name="name" />
+          Name: <input type="text" name="name" />
         </label>
       </p>
       <p>
         <label>
-          Your Email: <input type="email" name="email" />
+          Email: <input type="email" name="email" />
         </label>
       </p>
       <p>
