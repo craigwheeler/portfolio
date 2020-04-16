@@ -21,7 +21,6 @@ const ContactForm = () => {
       <p>
         <button type="submit">Send</button>
       </p>
-      <div data-netlify-recaptcha="true"></div>
     </form>
   );
 };
