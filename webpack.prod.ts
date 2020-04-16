@@ -28,7 +28,7 @@ const config: webpack.Configuration = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json', '.txt']
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
   module: {
     rules: [{ test: /\.tsx?$/, loader: 'awesome-typescript-loader' }]
