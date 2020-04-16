@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { Link, Switch, Route, Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { connect, useDispatch } from 'react-redux';
@@ -53,7 +53,7 @@ const Menu = ({ open }: any): JSX.Element => {
         </li>
         <li>
           <Link to="/contact" onClick={() => dispatch(toggleSidebar(open))}>
-            <FontAwesomeIcon icon={faCog} />
+            <FontAwesomeIcon icon={faMailBulk} />
             Contact
           </Link>
         </li>
