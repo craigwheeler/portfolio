@@ -5,9 +5,14 @@ import * as HtmlWebPackPlugin from 'html-webpack-plugin';
 const OfflinePlugin = require('offline-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const htmlWebpackPlugin = new HtmlWebPackPlugin({
+const htmlWebpackPluginIndex = new HtmlWebPackPlugin({
   filename: 'index.html',
   template: './src/index.html'
+});
+
+const htmlWebpackPluginForm = new HtmlWebPackPlugin({
+  filename: 'form.html',
+  template: './src/form.html'
 });
 
 const config: webpack.Configuration = {
@@ -24,7 +29,8 @@ const config: webpack.Configuration = {
     rules: [{ test: /\.tsx?$/, loader: 'awesome-typescript-loader' }]
   },
   plugins: [
-    htmlWebpackPlugin,
+    htmlWebpackPluginIndex,
+    htmlWebpackPluginForm,
     new OfflinePlugin(),
     new CopyWebpackPlugin([{ from: 'src/img', to: 'img/' }, 'src/manifest.json', 'favicon.ico'], {
       ignore: ['.DS_Store']
