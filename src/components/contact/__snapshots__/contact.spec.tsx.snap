@@ -24,7 +24,54 @@ exports[`Contact should render contact page 1`] = `
         />
       </svg>
     </div>
-    Contact
+    <form
+      data-netlify="true"
+      data-netlify-recaptcha="true"
+      method="POST"
+      name="portfolio-contact"
+    >
+      <input
+        name="form-name"
+        type="hidden"
+        value="portfolio-contact"
+      />
+      <p>
+        <label>
+          Name: 
+          <input
+            name="name"
+            type="text"
+          />
+        </label>
+      </p>
+      <p>
+        <label>
+          Email: 
+          <input
+            name="email"
+            type="email"
+          />
+        </label>
+      </p>
+      <p>
+        <label>
+          Message: 
+          <textarea
+            name="message"
+          />
+        </label>
+      </p>
+      <div
+        data-netlify-recaptcha="true"
+      />
+      <p>
+        <button
+          type="submit"
+        >
+          Send
+        </button>
+      </p>
+    </form>
   </div>
 </div>
 `;
