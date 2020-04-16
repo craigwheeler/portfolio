@@ -26,14 +26,18 @@ exports[`Contact should render contact page 1`] = `
     </div>
     <form
       data-netlify="true"
-      data-netlify-recaptcha="true"
       method="POST"
       name="portfolio-contact"
+      netlify-honeypot="bot-field"
     >
       <input
         name="form-name"
         type="hidden"
         value="portfolio-contact"
+      />
+      <input
+        name="bot-field"
+        type="hidden"
       />
       <p>
         <label>
@@ -61,9 +65,6 @@ exports[`Contact should render contact page 1`] = `
           />
         </label>
       </p>
-      <div
-        data-netlify-recaptcha="true"
-      />
       <p>
         <button
           type="submit"

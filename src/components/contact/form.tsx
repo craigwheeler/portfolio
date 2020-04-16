@@ -2,8 +2,9 @@ import * as React from 'react';
 
 const ContactForm = () => {
   return (
-    <form name="portfolio-contact" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+    <form name="portfolio-contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
       <input type="hidden" name="form-name" value="portfolio-contact" />
+      <input type="hidden" name="bot-field" />
       <p>
         <label>
           Name: <input type="text" name="name" />
@@ -19,7 +20,6 @@ const ContactForm = () => {
           Message: <textarea name="message"></textarea>
         </label>
       </p>
-      <div data-netlify-recaptcha="true"></div>
       <p>
         <button type="submit">Send</button>
       </p>
