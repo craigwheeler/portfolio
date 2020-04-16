@@ -23,6 +23,7 @@
     "@types/react-router-dom": "^5.1.4",
     "@types/redux-promise": "^0.5.28",
     "@types/styled-components": "^4.4.3",
+    "@types/webpack-dev-server": "^3.10.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",

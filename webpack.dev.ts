@@ -1,5 +1,6 @@
 import * as webpack from 'webpack';
 import * as HtmlWebPackPlugin from 'html-webpack-plugin';
+import 'webpack-dev-server';
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -11,6 +12,9 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 const config: webpack.Configuration = {
   mode: 'development',
   entry: './src/index.tsx',
+  devServer: {
+    historyApiFallback: true
+  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json']
   },
