@@ -5,19 +5,9 @@ import * as HtmlWebPackPlugin from 'html-webpack-plugin';
 const OfflinePlugin = require('offline-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const index = new HtmlWebPackPlugin({
+const htmlWebPackPlugin = new HtmlWebPackPlugin({
   filename: 'index.html',
   template: './src/index.html'
-});
-
-const redirects = new HtmlWebPackPlugin({
-  filename: '_redirects',
-  template: './src/_redirects'
-});
-
-const form = new HtmlWebPackPlugin({
-  filename: 'form.html',
-  template: './src/form.html'
 });
 
 const config: webpack.Configuration = {
@@ -34,13 +24,14 @@ const config: webpack.Configuration = {
     rules: [{ test: /\.tsx?$/, loader: 'awesome-typescript-loader' }]
   },
   plugins: [
-    index,
-    redirects,
-    form,
+    htmlWebPackPlugin,
     new OfflinePlugin(),
-    new CopyWebpackPlugin([{ from: 'src/img', to: 'img/' }, 'src/manifest.json', 'favicon.ico'], {
-      ignore: ['.DS_Store']
-    })
+    new CopyWebpackPlugin(
+      [{ from: 'src/img', to: 'img/' }, 'favicon.ico', 'src/manifest.json', 'src/_redirects', 'src/form.html'],
+      {
+        ignore: ['.DS_Store']
+      }
+    )
   ]
 };
 
