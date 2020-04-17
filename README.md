@@ -1,21 +1,13 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="">
-    <img src="src/assets/img/logo.png" alt="Logo" width="50" height="50">
-  </a>
-
+  <a href=""><img src="src/assets/img/logo.png" alt="Logo" width="50" height="50"></a>
   <h3 align="center">Craig Wheeler | PWA React Portfolio Page</h3>
-
+  <p align="center">A minimal PWA portfolio landing page created using Typescript/React and Webpack</p>
   <p align="center">
-    A minimal PWA portfolio landing page created using Typescript/React and Webpack
-    <br />
-    <br />
-    <a href="http://craigwheeler.net">View Portfolio</a>
-    ·
-    <a  href="https://craigwheeler.netlify.app/contact">Report Bug</a>
-    ·
-    <a  href="https://craigwheeler.netlify.app/contact">Request Feature</a>
+    <a href="http://craigwheeler.net" target="_blank">View Portfolio</a> ·
+    <a href="https://craigwheeler.netlify.app/contact" target="_blank">Report Bug</a> ·
+    <a href="https://craigwheeler.netlify.app/contact" target="_blank">Request Feature</a>
   </p>
 </p>
 
@@ -27,15 +19,18 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+  - [Development Server](#development-server)
+  - [Production Build](#production-build)
+  - [Testing](#testing)
 - [Contact](#contact)
 
 <!-- ABOUT THE PROJECT -->
 
 ## About My Portfolio
 
-This portfolio landing page was created from my [PWA starter](https://github.com/craigwheeler/starter-pwa) template using modern development tools such as Webpack, Typescript and Jest.
+This portfolio landing page was created from my [PWA starter](https://github.com/craigwheeler/starter-pwa) template using modern development tools such as Typescript, React, Webpack and Jest.
 
-Technologies used to scaffold this page.
+Technologies used to scaffold this page:
 
 - [React](https://netlify.com/)
 - [Typescript](https://www.typescriptlang.org/)
@@ -71,7 +66,7 @@ git clone https://github.com/craigwheeler/starter-pwa.git
 npm i
 ```
 
-3. Start
+### Development Server
 
 ```
 npm run dev
@@ -79,10 +74,14 @@ npm run dev
 
 ### Production Build
 
-To generate a production build
-
 ```
 npm run build
+```
+
+### Testing
+
+```
+npm run test
 ```
 
 <!-- CONTACT -->
@@ -90,5 +89,3 @@ npm run build
 ## Contact
 
 Craig Wheeler | craigwheeler.net
-
-[product-screenshot]: src/assets/img/screenshot.png
