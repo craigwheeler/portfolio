@@ -5,7 +5,7 @@ import { faHome, faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { Link, Switch, Route, Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { connect, useDispatch } from 'react-redux';
-import { toggleSidebar } from '../../actions';
+import { toggleSidebar } from '../../redux/actions';
 
 import HomePage from '../home';
 import ContactPage from '../contact';

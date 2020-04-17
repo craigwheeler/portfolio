@@ -23,7 +23,7 @@ const config: webpack.Configuration = {
   },
   plugins: [
     htmlWebpackPlugin,
-    new CopyWebpackPlugin([{ from: 'src/img', to: 'img/' }, 'src/manifest.json', 'src/sw.js'], {
+    new CopyWebpackPlugin([{ from: 'src/assets/img', to: 'img/' }, 'src/manifest.json', 'src/sw.js'], {
       ignore: ['.DS_Store']
     })
   ]

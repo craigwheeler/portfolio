@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="">
-    <img src="src/img/logo.png" alt="Logo" width="50" height="50">
+    <img src="src/assets/img/logo.png" alt="Logo" width="50" height="50">
   </a>
 
   <h3 align="center">Craig Wheeler | PWA React Portfolio Page</h3>
@@ -110,4 +110,4 @@ Link: [https://github.com/craigwheeler/starter-pwa](https://github.com/craigwhee
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[product-screenshot]: src/img/screenshot.png
+[product-screenshot]: src/assets/img/screenshot.png

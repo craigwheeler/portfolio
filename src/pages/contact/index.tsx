@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import ContactForm from './form';
+import ContactForm from '../../components/form';
 
 const ContactPage = (): JSX.Element => (
   <Container>

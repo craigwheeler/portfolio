@@ -26,9 +26,12 @@ const config: webpack.Configuration = {
   plugins: [
     htmlWebPackPlugin,
     new OfflinePlugin(),
-    new CopyWebpackPlugin([{ from: 'src/img', to: 'img/' }, 'favicon.ico', 'src/manifest.json', 'src/_redirects'], {
-      ignore: ['.DS_Store']
-    })
+    new CopyWebpackPlugin(
+      [{ from: 'src/assets/img', to: 'img/' }, 'favicon.ico', 'src/manifest.json', 'src/_redirects'],
+      {
+        ignore: ['.DS_Store']
+      }
+    )
   ]
 };
 
